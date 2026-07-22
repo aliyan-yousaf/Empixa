@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empixa | Branding, Web Design & Marketing Agency Malta</title>
+<meta name="description" content="Empixa helps Maltese businesses grow through branding, website design, packaging, content, and digital marketing services built around strategy and performance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="https://empixa.com/wp-content/uploads/2024/04/empixa-logo-original.png">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --red:#2857C7;
+    --red-dark:#1E3F99;
+    --red-light:#EAF1FD;
+    --red-line: rgba(40,87,199,.18);
+    --ink:#16171B;
+    --ink-soft:#53565F;
+    --gray-500:#71747C;
+    --gray-300:#D8D6D2;
+    --gray-200:#E9E7E3;
+    --gray-100:#F4F3F0;
+    --bg:#FFFFFF;
+    --bg-alt:#FAF9F7;
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:26px;
+    --shadow-xs: 0 1px 2px rgba(22,23,27,.05);
+    --shadow-sm: 0 2px 10px rgba(22,23,27,.05), 0 1px 2px rgba(22,23,27,.04);
+    --shadow-md: 0 12px 32px rgba(22,23,27,.08), 0 2px 8px rgba(22,23,27,.04);
+    --shadow-lg: 0 24px 70px rgba(22,23,27,.14);
+    --container: 1180px;
+    --ease: cubic-bezier(.22,.68,0,1);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+  }
+  body{
+    margin:0;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family:inherit; cursor:pointer; }
+  h1,h2,h3,h4,p{ margin:0; }
+  :focus-visible{ outline:2px solid var(--red); outline-offset:3px; border-radius:4px; }
+
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 32px; }
+  section{ position:relative; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--red); margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:''; width:6px; height:6px; border-radius:50%; background:var(--red);
+  }
+  h2.section-title{
+    font-size:clamp(28px,3.6vw,44px);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.15;
+    color:var(--ink);
+    max-width:780px;
+  }
+  .section-lede{
+    font-size:17px; color:var(--ink-soft); max-width:640px; margin-top:18px; line-height:1.7;
+  }
+  .section-head{ margin-bottom:56px; }
+  .section-head.centered{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head.centered .section-title, .section-head.centered .section-lede{ margin-left:auto; margin-right:auto; }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-weight:600; font-size:15px; padding:14px 26px; border-radius:var(--radius-sm);
+    border:1px solid transparent; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 1px 0 rgba(0,0,0,.05), 0 8px 20px rgba(40,87,199,.28); }
+  .btn-primary:hover{ background:var(--red-dark); transform:translateY(-2px); box-shadow:0 14px 28px rgba(40,87,199,.34); }
+  .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--gray-300); }
+  .btn-ghost:hover{ border-color:var(--ink); background:var(--gray-100); transform:translateY(-2px); }
+  .btn-sm{ padding:10px 18px; font-size:14px; }
+  .btn svg{ width:16px; height:16px; transition:transform .25s var(--ease); }
+  .btn:hover svg{ transform:translateX(3px); }
+
+  /* ============ HEADER ============ */
+  header.site-header{
+    position:sticky; top:0; z-index:1000;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--gray-200);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:78px; }
+  .logo img{ height:34px; width:auto; }
+  nav.primary-nav{ display:flex; align-items:center; gap:2px; }
+  nav.primary-nav > ul{ display:flex; align-items:center; gap:4px; }
+  nav.primary-nav > ul > li{ position:relative; }
+  nav.primary-nav > ul > li > a{
+    display:flex; align-items:center; gap:5px;
+    font-size:14.5px; font-weight:500; color:var(--ink-soft);
+    padding:10px 14px; border-radius:8px; transition:color .2s, background .2s;
+  }
+  nav.primary-nav > ul > li > a:hover{ color:var(--ink); background:var(--gray-100); }
+  nav.primary-nav > ul > li > a svg{ width:13px; height:13px; opacity:.6; transition:transform .2s; }
+  .has-dropdown:hover > a svg{ transform:rotate(180deg); }
+  .dropdown{
+    position:absolute; top:calc(100% + 10px); left:0; min-width:220px;
+    background:#fff; border:1px solid var(--gray-200); border-radius:14px;
+    box-shadow:var(--shadow-md); padding:8px; opacity:0; visibility:hidden;
+    transform:translateY(6px); transition:all .2s var(--ease);
+  }
+  .has-dropdown:hover .dropdown{ opacity:1; visibility:visible; transform:translateY(0); }
+  .dropdown a{ display:block; padding:10px 12px; border-radius:9px; font-size:14px; color:var(--ink-soft); font-weight:500; }
+  .dropdown a:hover{ background:var(--red-light); color:var(--red-dark); }
+  .header-actions{ display:flex; align-items:center; gap:10px; }
+  .menu-toggle{ display:none; background:none; border:none; padding:8px; }
+  .menu-toggle span{ display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; border-radius:2px; transition:.25s; }
+
+  /* ============ HERO ============ */
+  .hero{
+    padding:96px 0 60px;
+    overflow:hidden;
+    background:
+      radial-gradient(760px 420px at 82% -10%, var(--red-light), transparent 60%),
+      var(--bg);
+  }
+  .hero-inner{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+  .hero-copy h1{
+    font-size:clamp(38px,4.6vw,60px); font-weight:800; letter-spacing:-0.025em; line-height:1.06;
+    color:var(--ink);
+  }
+  .hero-copy h1 .accent{ color:var(--red); }
+  .hero-copy p.lede{
+    margin-top:22px; font-size:18px; color:var(--ink-soft); max-width:560px; line-height:1.7;
+  }
+  .hero-proof{
+    margin-top:16px; display:flex; flex-wrap:wrap; gap:10px 22px; font-size:14px; color:var(--ink-soft);
+  }
+  .hero-proof li{ display:flex; align-items:center; gap:8px; }
+  .hero-proof strong{ color:var(--ink); font-weight:700; }
+  .hero-proof svg{ width:16px; height:16px; color:var(--red); flex-shrink:0; }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+  .hero-services{ display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+  .hero-services a{
+    font-size:13.5px; font-weight:600; color:var(--ink-soft); padding:8px 16px;
+    border:1px solid var(--gray-200); border-radius:var(--radius-sm); transition:.2s;
+  }
+  .hero-services a:hover{ border-color:var(--red); color:var(--red-dark); background:var(--red-light); }
+
+  /* Hero visual: connection diagram */
+  .hero-visual{ position:relative; }
+  .hero-diagram{ width:100%; height:auto; }
+  .node-card{
+    position:absolute; background:#fff; border:1px solid var(--gray-200); border-radius:14px;
+    padding:10px 14px; font-size:12.5px; font-weight:700; color:var(--ink);
+    box-shadow:var(--shadow-sm); display:flex; align-items:center; gap:8px;
+  }
+  .node-card span.dot{ width:8px; height:8px; border-radius:50%; background:var(--red); }
+  .node-tl{ top:2%; left:0%; }
+  .node-tr{ top:2%; right:0%; }
+  .node-bl{ bottom:4%; left:4%; }
+  .node-br{ bottom:4%; right:2%; }
+  .node-center{
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    background:var(--ink); color:#fff; border-color:var(--ink); padding:16px 22px; font-size:14px;
+  }
+  .node-center span.dot{ background:var(--red); }
+  .pulse-line{ stroke:var(--red); stroke-width:2; fill:none; stroke-dasharray:6 8; opacity:.55; animation:dash 22s linear infinite; }
+  @keyframes dash{ to{ stroke-dashoffset:-400; } }
+
+  .stat-strip{ border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200); background:var(--bg-alt); }
+  .stat-strip .wrap{ display:flex; justify-content:space-between; padding:34px 32px; gap:24px; flex-wrap:wrap; }
+  .stat-item{ text-align:left; }
+  .stat-item .num{ font-size:34px; font-weight:800; letter-spacing:-0.02em; color:var(--ink); }
+  .stat-item .num .accent{ color:var(--red); }
+  .stat-item .label{ font-size:13.5px; color:var(--gray-500); font-weight:500; margin-top:2px; }
+
+  /* ============ REVEAL ============ */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.reveal-left{ transform:translateX(-46px); }
+  .reveal.reveal-right{ transform:translateX(46px); }
+  .reveal.in{ opacity:1; transform:none; }
+  .d1{ transition-delay:.08s; } .d2{ transition-delay:.16s; } .d3{ transition-delay:.24s; }
+  .d4{ transition-delay:.32s; } .d5{ transition-delay:.4s; } .d6{ transition-delay:.48s; }
+  .d7{ transition-delay:.56s; } .d8{ transition-delay:.64s; }
+
+  /* ============ WHAT WE DO ============ */
+  .section{ padding:110px 0; }
+  .section-alt{ background:var(--bg-alt); }
+  .services-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:8px; }
+  .service-card{
+    background:#fff; border:1px solid var(--gray-200); border-radius:var(--radius-lg);
+    padding:34px 32px; transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .service-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--gray-300); }
+  .service-icon{
+    width:46px; height:46px; border-radius:12px; background:var(--red-light); color:var(--red);
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+  }
+  .service-icon svg{ width:22px; height:22px; }
+  .service-card h3{ font-size:19px; font-weight:700; letter-spacing:-0.01em; margin-bottom:12px; }
+  .service-card ul{ display:flex; flex-direction:column; gap:9px; margin-bottom:20px; }
+  .service-card ul li{ font-size:14.5px; color:var(--ink-soft); display:flex; gap:10px; align-items:flex-start; }
+  .service-card ul li::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--red); margin-top:8px; flex-shrink:0; }
+  .service-card .card-link{ font-size:14px; font-weight:700; color:var(--red-dark); display:inline-flex; align-items:center; gap:6px; }
+  .service-card .card-link svg{ width:14px; height:14px; transition:transform .2s; }
+  .service-card:hover .card-link svg{ transform:translateX(3px); }
+
+  .why-block{ margin-top:70px; display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center; }
+  .why-block h3{ font-size:24px; font-weight:800; letter-spacing:-0.01em; margin-bottom:16px; }
+  .why-block p{ color:var(--ink-soft); font-size:15.5px; line-height:1.75; }
+
+  /* Marquee */
+  .logo-marquee{ overflow:hidden; position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .marquee-track{ display:flex; align-items:center; gap:20px; width:max-content; animation:scroll-x 32s linear infinite; }
+  .marquee-track .logo-chip{
+    display:flex; align-items:center; justify-content:center; height:64px; padding:0 26px;
+    background:#fff; border:1px solid var(--gray-200); border-radius:14px; box-shadow:var(--shadow-xs);
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+  }
+  .marquee-track .logo-chip:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); border-color:var(--red); }
+  .marquee-track img{ height:24px; width:auto; opacity:.9; }
+  @keyframes scroll-x{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ============ PORTFOLIO ============ */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:44px; }
+  .filter-btn{
+    background:#fff; border:1px solid var(--gray-200); border-radius:var(--radius-sm); padding:9px 18px;
+    font-size:13.5px; font-weight:600; color:var(--ink-soft); transition:.2s;
+  }
+  .filter-btn:hover{ border-color:var(--ink); color:var(--ink); }
+  .filter-btn.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .portfolio-card{
+    border-radius:var(--radius-md); overflow:hidden; background:#fff; border:1px solid var(--gray-200);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease); display:flex; flex-direction:column;
+  }
+  .portfolio-card.hide{ display:none; }
+  .portfolio-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
+  .portfolio-thumb{ aspect-ratio:16/10.5; overflow:hidden; background:var(--gray-100); }
+  .portfolio-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .5s var(--ease); }
+  .portfolio-card:hover .portfolio-thumb img{ transform:scale(1.05); }
+  .portfolio-body{ padding:20px 22px 24px; }
+  .portfolio-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .portfolio-tags span{ font-size:11px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--red-dark); background:var(--red-light); padding:3px 9px; border-radius:6px; }
+  .portfolio-body h4{ font-size:16.5px; font-weight:700; letter-spacing:-0.01em; margin-bottom:6px; }
+  .portfolio-body p{ font-size:13.5px; color:var(--gray-500); line-height:1.6; }
+
+  /* ============ CTA BANNER ============ */
+  .cta-banner{
+    background:var(--ink); border-radius:var(--radius-lg); margin:0 auto; max-width:var(--container);
+    padding:64px 56px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+    position:relative; overflow:hidden;
+  }
+  .cta-banner::before{
+    content:''; position:absolute; inset:0; background:radial-gradient(560px 280px at 90% 0%, rgba(40,87,199,.35), transparent 70%);
+  }
+  .cta-banner h3{ font-size:clamp(24px,3vw,32px); font-weight:800; color:#fff; letter-spacing:-0.02em; position:relative; max-width:500px; }
+  .cta-banner p{ color:#B9BBC2; margin-top:8px; font-size:15px; position:relative; }
+  .cta-banner .btn-primary{ position:relative; }
+
+  /* ============ WHY CHOOSE ============ */
+  .reasons{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .reason-card{ background:#fff; border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding:32px 28px; }
+  .reason-num{ font-size:13px; font-weight:800; color:var(--red); letter-spacing:.05em; margin-bottom:16px; display:block; }
+  .reason-card h4{ font-size:18px; font-weight:700; margin-bottom:10px; letter-spacing:-0.01em; }
+  .reason-card p{ font-size:14.5px; color:var(--ink-soft); line-height:1.7; }
+
+  /* ============ CREDENTIALS ============ */
+  .credentials-row{ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+  .credentials-row a{
+    display:flex; align-items:center; justify-content:center; height:76px; padding:0 30px; flex:1 1 160px;
+    background:#fff; border:1px solid var(--gray-200); border-radius:16px; box-shadow:var(--shadow-xs);
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+  }
+  .credentials-row a:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); border-color:var(--red); }
+  .credentials-row img{ height:32px; width:auto; object-fit:contain; opacity:1; }
+
+  /* ============ SKILLS ============ */
+  .skills-block{ display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:center; }
+  .skills-block img{ border-radius:var(--radius-lg); box-shadow:var(--shadow-md); }
+  .skills-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+  .skills-tags span{
+    font-size:13.5px; font-weight:600; padding:9px 16px; border-radius:999px;
+    background:var(--bg-alt); border:1px solid var(--gray-200); color:var(--ink-soft);
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-section{ background:var(--ink); color:#fff; }
+  .contact-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; }
+  .contact-info .eyebrow{ color:#9FBBF5; }
+  .contact-info .eyebrow::before{ background:#9FBBF5; }
+  .contact-info h2{ color:#fff; font-size:clamp(26px,3.2vw,36px); font-weight:800; letter-spacing:-0.02em; margin-bottom:16px; }
+  .contact-info p.lede{ color:#B9BBC2; font-size:15.5px; line-height:1.75; max-width:440px; }
+  .contact-badges{ display:flex; flex-direction:column; gap:12px; margin-top:28px; }
+  .contact-badges li{ display:flex; align-items:center; gap:10px; font-size:14.5px; color:#DEDFE3; }
+  .contact-badges svg{ width:17px; height:17px; color:#9FBBF5; flex-shrink:0; }
+  .contact-reach{ margin-top:34px; display:flex; gap:36px; flex-wrap:wrap; }
+  .contact-reach div span{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:#8B8E97; margin-bottom:4px; }
+  .contact-reach div a, .contact-reach div p{ font-size:15px; font-weight:600; color:#fff; }
+
+  .contact-form{ background:#fff; border-radius:var(--radius-lg); padding:40px; box-shadow:var(--shadow-lg); }
+  .contact-form h3{ color:var(--ink); font-size:20px; font-weight:800; margin-bottom:6px; letter-spacing:-0.01em; }
+  .contact-form > p{ color:var(--gray-500); font-size:14px; margin-bottom:26px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-size:13px; font-weight:600; color:var(--ink-soft); margin-bottom:7px; }
+  .field input, .field select{
+    width:100%; padding:12px 14px; border:1px solid var(--gray-200); border-radius:10px;
+    font-family:inherit; font-size:14.5px; color:var(--ink); background:var(--bg-alt); transition:.2s;
+  }
+  .field input:focus, .field select:focus{ outline:none; border-color:var(--red); background:#fff; box-shadow:0 0 0 4px var(--red-light); }
+  .contact-form .btn-primary{ width:100%; margin-top:6px; padding:15px; }
+  .form-success{ display:none; text-align:center; padding:30px 0; }
+  .form-success.show{ display:block; }
+  .form-success svg{ width:44px; height:44px; color:var(--red); margin:0 auto 14px; }
+  .form-success h4{ font-size:18px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+  .form-success p{ color:var(--gray-500); font-size:14px; }
+
+  /* ============ FOOTER ============ */
+  footer.site-footer{ background:#0F1013; color:#9EA0A8; padding:64px 0 28px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #24252A; }
+  .footer-logo img{ height:30px; filter:brightness(0) invert(1); margin-bottom:16px; }
+  .footer-grid p{ font-size:13.5px; line-height:1.7; max-width:260px; }
+  .footer-col h5{ color:#fff; font-size:13px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:16px; }
+  .footer-col ul{ display:flex; flex-direction:column; gap:11px; }
+  .footer-col a{ font-size:14px; color:#9EA0A8; transition:color .2s; }
+  .footer-col a:hover{ color:#fff; }
+  .footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:26px; flex-wrap:wrap; gap:16px; }
+  .footer-bottom p{ font-size:13px; color:#6E7078; }
+  .footer-social{ display:flex; gap:10px; }
+  .footer-social a{ width:36px; height:36px; border-radius:50%; border:1px solid #2B2C31; display:flex; align-items:center; justify-content:center; transition:.2s; }
+  .footer-social a:hover{ border-color:var(--red); background:var(--red); color:#fff; }
+  .footer-social svg{ width:16px; height:16px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1024px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; height:280px; }
+    .why-block, .skills-block, .contact-grid{ grid-template-columns:1fr; gap:36px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .portfolio-grid{ grid-template-columns:repeat(2,1fr); }
+    .reasons{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 860px){
+    nav.primary-nav{ position:fixed; inset:78px 0 0 0; background:#fff; padding:20px 24px; flex-direction:column; align-items:stretch; transform:translateX(100%); transition:transform .3s var(--ease); overflow-y:auto; }
+    nav.primary-nav.open{ transform:translateX(0); }
+    nav.primary-nav > ul{ flex-direction:column; align-items:stretch; gap:2px; }
+    nav.primary-nav > ul > li > a{ padding:14px 8px; border-bottom:1px solid var(--gray-100); border-radius:0; }
+    .dropdown{ position:static; box-shadow:none; border:none; opacity:1; visibility:visible; transform:none; display:none; padding:0 0 0 14px; }
+    .has-dropdown.open .dropdown{ display:block; }
+    .header-actions .btn{ display:none; }
+    .menu-toggle{ display:block; }
+    .stat-strip .wrap{ justify-content:flex-start; }
+  }
+  @media (max-width: 720px){
+    .wrap{ padding:0 20px; }
+    .section{ padding:76px 0; }
+    .hero{ padding:56px 0 40px; }
+    .cta-banner{ padding:44px 28px; margin:0 20px; width:auto; }
+    .portfolio-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .contact-form{ padding:26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">
+      <img src="https://empixa.com/wp-content/uploads/2024/04/empixa-logo-original.png" alt="Empixa logo">
+    </a>
+    <nav class="primary-nav" id="primaryNav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#what-we-do">Services</a></li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-toggle">Pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="dropdown">
+            <a href="#what-we-do">Branding</a>
+            <a href="#what-we-do">Marketing</a>
+            <a href="#what-we-do">Packaging</a>
+            <a href="#what-we-do">Website Design</a>
+          </div>
+        </li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#why-choose">Who We Are</a></li>
+        <li><a href="#credentials">Industry Insights</a></li>
+        <li><a href="#contact-us">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact-us" class="btn btn-primary btn-sm">Book a Free Call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal reveal-left">
+      <h1>Built to Convert, <span class="accent">Not Just to Look Good</span></h1>
+      <p class="lede">We help Maltese businesses grow through strategic branding, packaging, web design and performance marketing that all work from the same plan.</p>
+      <ul class="hero-proof">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> <strong>312 sales</strong>&nbsp;and 18,420 clicks for one client</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> <strong>141% sales growth</strong>&nbsp;for another</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> <strong>+40%</strong>&nbsp;from a packaging redesign</li>
+      </ul>
+      <div class="hero-cta">
+        <a href="#contact-us" class="btn btn-primary">Book a Free Discovery Call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#portfolio" class="btn btn-ghost">See Our Client Results</a>
+      </div>
+      <div class="hero-services">
+        <a href="#what-we-do">Branding</a>
+        <a href="#what-we-do">Marketing</a>
+        <a href="#what-we-do">Websites</a>
+        <a href="#what-we-do">Packaging</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-right d2">
+      <svg class="hero-diagram" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+        <path class="pulse-line" d="M60 40 C 140 100, 160 140, 210 190"/>
+        <path class="pulse-line" d="M360 40 C 280 100, 260 140, 210 190"/>
+        <path class="pulse-line" d="M60 330 C 140 270, 160 230, 210 190"/>
+        <path class="pulse-line" d="M360 330 C 280 270, 260 230, 210 190"/>
+      </svg>
+      <div class="node-card node-tl"><span class="dot"></span>Branding</div>
+      <div class="node-card node-tr"><span class="dot"></span>Marketing</div>
+      <div class="node-card node-bl"><span class="dot"></span>Packaging</div>
+      <div class="node-card node-br"><span class="dot"></span>Web Design</div>
+      <div class="node-card node-center"><span class="dot"></span>Empixa</div>
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="wrap">
+    <div class="stat-item reveal"><div class="num"><span class="accent">105</span>+</div><div class="label">Projects Delivered</div></div>
+    <div class="stat-item reveal d1"><div class="num">5</div><div class="label">Services</div></div>
+    <div class="stat-item reveal d2"><div class="num"><span class="accent">8</span>+</div><div class="label">Years of Experience</div></div>
+  </div>
+</div>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="section" id="what-we-do">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2 class="section-title">Most agencies do one thing. We do the whole job.</h2>
+      <p class="section-lede">Everything we do is connected. When the branding is right, the website converts better. When the website converts, the ads cost less to run. When the ads run on a clear brand message, the content reinforces it. This is what integrated looks like in practice.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal reveal-left">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
+        <h3>Marketing Services in Malta</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;">Performance marketing that turns attention into enquiries and sales.</p>
+        <ul>
+          <li>Google Ads and Meta Ads management</li>
+          <li>Funnel and landing page optimisation</li>
+          <li>Retargeting and audience building</li>
+          <li>Reporting and ROI tracking</li>
+        </ul>
+        <a href="https://empixa.com/digital-services-by-empixa/" class="card-link">Explore Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="service-card reveal reveal-right d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+        <h3>Branding &amp; Packaging Design in Malta</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;">A clear brand system that makes you look premium and consistent everywhere.</p>
+        <ul>
+          <li>Brand strategy and positioning</li>
+          <li>Logo and identity system</li>
+          <li>Packaging that sells on shelf and online</li>
+          <li>Print ready files and dieline support</li>
+        </ul>
+        <a href="https://empixa.com/branding-services-by-empixa/" class="card-link">Explore Branding <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="service-card reveal reveal-left d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>Web Design in Malta</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;">Fast websites built to rank, load quickly, and convert visitors into leads.</p>
+        <ul>
+          <li>WordPress websites and landing pages</li>
+          <li>Speed optimisation and technical SEO</li>
+          <li>Mobile first UX and clear structure</li>
+          <li>Tracking setup for ads and analytics</li>
+        </ul>
+        <a href="https://empixa.com/website-design-by-empixa/" class="card-link">Explore Web Design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+
+      <div class="service-card reveal reveal-right d3">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><path d="M14 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/></svg></div>
+        <h3>Digital Content for Ads &amp; Social</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;">Content designed for performance, not just aesthetics.</p>
+        <ul>
+          <li>Photo and video content for campaigns</li>
+          <li>Social creatives and ad variations</li>
+          <li>Product and brand storytelling</li>
+          <li>Content systems for consistent posting</li>
+        </ul>
+        <a href="https://empixa.com/empixa-portfolio-marketing-branding-websites/" class="card-link">See Content Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="why-block">
+      <div class="reveal reveal-left">
+        <h3>Why Businesses in Malta Chose Empixa</h3>
+        <p>We work differently. We start with your business goal &mdash; more customers, higher average order, better shelf positioning, more enquiries from the right kind of buyer &mdash; and we build every piece of your brand around that goal. Branding, packaging, web design, content, Google Ads, Meta campaigns. One strategy. One team. Everything aligned.</p>
+      </div>
+      <div class="logo-marquee reveal reveal-right d1">
+        <div class="marquee-track" id="marqueeTrack">
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/mayu-flavours.png" alt="Mayu Flavours"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/McSims-Logo-Light.png" alt="McSims"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/plant-grow.png" alt="Plant Grow"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/european-8-ball.png" alt="European 8 Ball"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/FM21_Reversed.png" alt="Frosty & Mills"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/GFC20-Logo-Horizontal-Reverse.png" alt="GFC"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/global-hiring.png" alt="Global Hiring"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/Happy-Shopper-Logo.png" alt="Happy Shopper"></div>
+          <div class="logo-chip"><img src="https://empixa.com/wp-content/uploads/2025/10/knockknock.png" alt="Knockknock"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section section-alt" id="portfolio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Recent work</div>
+      <h2 class="section-title">Case studies from Maltese brands we've grown.</h2>
+    </div>
+
+    <div class="filter-row reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="web">Web Design</button>
+      <button class="filter-btn" data-filter="packaging">Packaging</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <a class="portfolio-card reveal reveal-left" data-cat="branding packaging" href="https://empixa.com/?portfolio=bite-me-cookies-logo-packaging">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Bite-Me-Cookie-Packaging-Malta-2-rqbi05ewe2yz8orq1bt13z28vbtrzwvvdox7acdlt8.webp" alt="Bite Me Cookies packaging"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Branding</span><span>Packaging</span></div>
+          <h4>Bite Me Cookies &ndash; Logo &amp; Packaging</h4>
+          <p>A simple, shelf-ready logo and packaging system built for a growing cookie brand.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal d1" data-cat="branding" href="https://empixa.com/?portfolio=vorta-finance-branding">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-Template-vorta-finance-rgk7gc142ep95cam1cnq4qnhgqdip2gbrmd59cd9yk.jpg" alt="Vorta Finance branding"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Branding</span></div>
+          <h4>Vorta Finance Branding</h4>
+          <p>A confident, trust-first identity built for a modern financial services brand.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal reveal-right d2" data-cat="branding packaging" href="https://empixa.com/?portfolio=macho-cleaners-branding-packaging">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-Template-macho-cleaning-products-rhfezzp3aahtsltd4ko03exp2n0qqbul4xrhee82b0.jpg" alt="Macho Cleaners packaging"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Branding</span><span>Packaging</span></div>
+          <h4>Macho Cleaning Products</h4>
+          <p>Bold packaging for a value-premium home-care brand designed to stand out on shelf.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal reveal-left" data-cat="marketing" href="https://empixa.com/?portfolio=tablets-more-digital-marketing">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Tablets-and-More-Hero-Design-Text-04-rqaleudffyswzj2abnqy7jxqngwmt9xt2d2wn61up8.webp" alt="Tablets and More marketing"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Marketing</span></div>
+          <h4>Tablets &amp; More Digital Marketing</h4>
+          <p>Meta Ads, Google Ads and eCommerce marketing for an electronics retailer.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal d1" data-cat="marketing" href="https://empixa.com/?portfolio=gfc-proper-combos">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-Template-gfc-proper-combos-campaign-rhffk786825resgl4b58pbcguveu822twypauk9cj0.jpg" alt="Golden Fried Chicken campaign"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Marketing</span></div>
+          <h4>Golden Fried Chicken Proper Combos</h4>
+          <p>A campaign built around one clear goal: driving combo sales at scale.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal reveal-right d2" data-cat="web" href="https://empixa.com/?portfolio=rima-cruises-website-design">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-website-cover-rhfeyx5pi312kldcdm0ar6nspuaoyqllbn0kq1t7e4.jpg" alt="Rima Cruises website"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Web Design</span></div>
+          <h4>Rima Cruises Website</h4>
+          <p>A mobile-first site that turns curious visitors into paid seats on Malta's cruises.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal reveal-left" data-cat="web" href="https://empixa.com/?portfolio=mayu-flavours-website">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-mayu-flavours-rgk7dm9wbmzflw8lw6eixfbjonrcgjo8q6incke7xo.jpg" alt="Mayu Flavours website"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Web Design</span></div>
+          <h4>Mayu Flavours Website</h4>
+          <p>An elegant, adults-only dining presence built to drive table reservations.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal d1" data-cat="packaging" href="https://empixa.com/?portfolio=golden-fried-chicken-packaging">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/GFC-Packagin-Project-Image-rhfgb834pl5j777gbho3vzujoo7qisd0mpwujy6vn0.jpg" alt="Golden Fried Chicken packaging"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Packaging</span></div>
+          <h4>Golden Fried Chicken Packaging</h4>
+          <p>Fresh packaging built to carry the 2026 brand story onto every box.</p>
+        </div>
+      </a>
+      <a class="portfolio-card reveal reveal-right d2" data-cat="branding packaging" href="https://empixa.com/?portfolio=boba-bear-branding-packaging">
+        <div class="portfolio-thumb"><img loading="lazy" src="https://empixa.com/wp-content/uploads/elementor/thumbs/Portfolio-Hero-Image-Template-boba-bear-rhff8w820solrmvs4x7s7o1vn14wn47210821r0td8.jpg" alt="Boba Bear branding"></div>
+        <div class="portfolio-body">
+          <div class="portfolio-tags"><span>Branding</span><span>Packaging</span></div>
+          <h4>Boba Bear Branding &amp; Packaging</h4>
+          <p>A playful bubble-tea identity blending kawaii energy with shelf-ready packaging.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <div>
+        <h3>Let's Build Something That Performs</h3>
+        <p>One short call. Clear direction. No pressure.</p>
+      </div>
+      <a href="#contact-us" class="btn btn-primary">Request a Short Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE ============ -->
+<section class="section" id="why-choose">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why choose Empixa</div>
+      <h2 class="section-title">A clear strategy from the start.</h2>
+    </div>
+    <div class="reasons">
+      <div class="reason-card reveal reveal-left">
+        <span class="reason-num">01</span>
+        <h4>8+ Years in the Maltese Market</h4>
+        <p>We understand local consumer behaviour, competition and what makes Maltese businesses grow.</p>
+      </div>
+      <div class="reason-card reveal d1">
+        <span class="reason-num">02</span>
+        <h4>Real Work, Real Results</h4>
+        <p>One client campaign: 312 sales and 18,420 link clicks. Another client grew from 24 sales to 58, a 141% increase. The work is measurable and the numbers are real.</p>
+      </div>
+      <div class="reason-card reveal reveal-right d2">
+        <span class="reason-num">03</span>
+        <h4>Honest Pricing, No Hidden Costs</h4>
+        <p>We do not take commission on third-party work or outsourced services. What we quote is what you pay. If we bring in external resource, we tell you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENTIALS ============ -->
+<section class="section section-alt" id="credentials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Credentials</div>
+      <h2 class="section-title">What credentials do we have?</h2>
+      <p class="section-lede">Our team doesn't just talk the talk; we have over eight years of hands-on experience in specialised fields. We hold credentials from esteemed institutions and platforms, ensuring top-tier expertise in our services.</p>
+    </div>
+    <div class="credentials-row reveal">
+      <a href="https://mcast.edu.mt/"><img src="https://empixa.com/wp-content/uploads/2020/06/Primary-Blue-300x141.png" alt="MCAST"></a>
+      <a href="https://icemalta.com/"><img src="https://empixa.com/wp-content/uploads/2020/06/ICEMaltaLogo-300x86.png" alt="ICE Malta"></a>
+      <a href="https://learning.google/"><img src="https://empixa.com/wp-content/uploads/elementor/thumbs/google-logo-rd2j6ql509499du47gqzs727ycnu22fuswy8uqliw8.png" alt="Google"></a>
+      <a href="https://www.facebook.com/business/learn"><img src="https://empixa.com/wp-content/uploads/elementor/thumbs/Facebook_Logo_Primary-rhfhqw9kbfz8iyphcy437tsz24lhjqd6h7rhlxi31k.png" alt="Facebook Blueprint"></a>
+      <a href="https://www.w3schools.com/"><img src="https://empixa.com/wp-content/uploads/2020/06/w3schools-logo-icon.png" alt="W3Schools"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section">
+  <div class="wrap skills-block">
+    <div class="reveal reveal-left">
+      <img src="https://empixa.com/wp-content/uploads/2025/10/Render_Mockup_4000_4000_2025-10-17-2branding-services-malta-1024x1024.jpg" alt="Empixa branding and packaging work">
+    </div>
+    <div class="reveal reveal-right d1">
+      <div class="eyebrow">Our team</div>
+      <h2 class="section-title">Our team excels in a broad range of creative &amp; strategic skills.</h2>
+      <p class="section-lede">We are a diverse team of specialists committed to innovation and excellence.</p>
+      <div class="skills-tags">
+        <span>Digital Marketing</span>
+        <span>Branding &amp; Visual Image</span>
+        <span>Web-Design &amp; Development</span>
+        <span>Market Research</span>
+        <span>Graphic Design</span>
+        <span>Content Writing</span>
+        <span>PPC, SEO, SEM, CRO</span>
+        <span>Product Packaging</span>
+        <span>Videography</span>
+        <span>Photography</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-section" id="contact-us">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal reveal-left">
+      <div class="eyebrow">Book your free strategy session</div>
+      <h2>Before you go &mdash; one 30-minute call.</h2>
+      <p class="lede">We will review your website, ads, and competitors, then send you 3 quick wins to improve sales and leads. One 30-minute call could change the direction of your brand.</p>
+      <ul class="contact-badges">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>8+ years experience</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Based in Malta</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>Reply within 24 hours</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>No pressure. Just clear next steps.</li>
+      </ul>
+      <div class="contact-reach">
+        <div><span>Email</span><a href="mailto:contact@empixa.com">contact@empixa.com</a></div>
+        <div><span>Phone</span><a href="tel:+35677077636">+356 7707 7636</a></div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-right d1">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div id="formFields">
+          <h3>Tell us what you need</h3>
+          <p>We'll get back to you within 24 hours.</p>
+          <div class="form-row">
+            <div class="field">
+              <label for="fname">Name *</label>
+              <input type="text" id="fname" name="name" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="fphone">Contact Number *</label>
+              <input type="tel" id="fphone" name="phone" required placeholder="+356 ...">
+            </div>
+          </div>
+          <div class="field">
+            <label for="femail">Email *</label>
+            <input type="email" id="femail" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="field">
+            <label for="fneed">What do you need help with? *</label>
+            <select id="fneed" name="need" required>
+              <option value="">Select an option</option>
+              <option>Marketing</option>
+              <option>Branding</option>
+              <option>Packaging</option>
+              <option>Website</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+          <h4>Thanks &mdash; message received.</h4>
+          <p>We'll reply within 24 hours to schedule your call.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="footer-logo"><img src="https://empixa.com/wp-content/uploads/2024/04/empixa-logo-original.png" alt="Empixa logo"></a>
+        <p>Brand Development Services. Call us all week from 9am to 8pm, or message us 24/7.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#what-we-do">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#why-choose">Who We Are</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+35677077636">(+356) 7707 7636</a></li>
+          <li><a href="mailto:contact@empixa.com">contact@empixa.com</a></li>
+          <li><a href="#" style="cursor:default;">5 Blk 16B, Bull Street, Cospicua, Malta</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="https://empixa.com/terms-and-privacy-policies">Terms &amp; Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 All Rights Reserved for Empixa &mdash; Digital Access</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/empixa" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://www.linkedin.com/company/90896509" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 8.75h3.5V21H3.2V8.75zM9.5 8.75h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.34V21h-3.5v-6.1c0-1.45-.03-3.32-2.03-3.32-2.03 0-2.34 1.58-2.34 3.22V21H9.5V8.75z"/></svg></a>
+        <a href="https://x.com/EmpixaTeam" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7.4 8.5L21.9 21h-6.4l-5-6.5L4.6 21H1.6l7.9-9L1 3h6.6l4.5 6 5.4-6z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile menu
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', function(){
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    if(!a.classList.contains('dropdown-toggle')){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); });
+    }
+  });
+  nav.querySelectorAll('.dropdown-toggle').forEach(function(t){
+    t.addEventListener('click', function(e){
+      if(window.innerWidth <= 860){
+        e.preventDefault();
+        t.closest('.has-dropdown').classList.toggle('open');
+      }
+    });
+  });
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(function(el){ io.observe(el); });
+
+  // Marquee: duplicate track for seamless loop
+  var track = document.getElementById('marqueeTrack');
+  track.innerHTML += track.innerHTML;
+
+  // Portfolio filter
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.portfolio-card');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var cats = card.getAttribute('data-cat');
+        card.classList.toggle('hide', f !== 'all' && cats.indexOf(f) === -1);
+      });
+    });
+  });
+
+  // Contact form
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
