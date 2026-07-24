@@ -361,7 +361,7 @@
     .footer-grid{ grid-template-columns:1fr 1fr; }
   }
   @media (max-width: 860px){
-    nav.primary-nav{ position:fixed; inset:78px 0 0 0; background:#fff; padding:20px 24px; flex-direction:column; align-items:stretch; transform:translateX(100%); transition:transform .3s var(--ease); overflow-y:auto; }
+    nav.primary-nav{ position:fixed; top:78px; left:0; right:0; height:calc(100vh - 78px); background:#fff; padding:20px 24px; flex-direction:column; align-items:stretch; transform:translateX(100%); transition:transform .3s var(--ease); overflow-y:auto; }
     nav.primary-nav.open{ transform:translateX(0); }
     nav.primary-nav > ul{ flex-direction:column; align-items:stretch; gap:2px; }
     nav.primary-nav > ul > li > a{ padding:14px 8px; border-bottom:1px solid var(--gray-100); border-radius:0; }
