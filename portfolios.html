@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Empixa Brand Development</title>
+<meta name="description" content="Browse Empixa's portfolio of Marketing, Web Design, Branding/Packaging, Design and Commercial Content projects from 2023 to 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="mark" aria-hidden="true"></span>empixa</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="./index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="./portfolio.html" aria-current="page">Portfolio</a>
+      <a href="./portfolios.html">portfolio2</a>
+      <a href="index.html#insights">Industry Insights</a>
+      <a href="index.html#consultation">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#consultation" class="btn btn-primary btn-sm">Get in Touch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="#10142a" stroke-width="2"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="portfolio-hero">
+  <div class="container">
+    <p class="eyebrow">Our Work</p>
+    <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); max-width: 18ch;">Let's discuss your challenges</h1>
+    <p class="lede" style="max-width:60ch;">We guarantee a healthy <strong>return on investment</strong>. Explore our top projects from <strong>2023 to 2026</strong> — Websites, Branding, Marketing and Content — showcasing the creativity, strategy and precision we bring to every campaign.</p>
+    <div class="hero-actions" style="margin-top:20px;">
+      <a href="index.html#consultation" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<div class="reel-divider" aria-hidden="true"></div>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-head">
+      <h2>Clients Who Trust Us</h2>
+      <p>See the success stories — browse our portfolio of completed projects below.</p>
+    </div>
+    <div class="logo-row">
+      <span class="logo-chip">Mc.Sims</span>
+      <span class="logo-chip">Plant Grow</span>
+      <span class="logo-chip">Eastern Bay Trading</span>
+      <span class="logo-chip">Frosty &amp; Mills</span>
+      <span class="logo-chip">GFC</span>
+      <span class="logo-chip">Global Corp</span>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER + GRID -->
+<section class="services" style="padding-top:56px;">
+  <div class="container">
+    <div class="filter-bar" role="tablist" aria-label="Filter portfolio by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="web">Web Design</button>
+      <button class="filter-btn" data-filter="branding">Branding/Packaging</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="content">Commercial Content</button>
+    </div>
+
+    <div class="portfolio-grid" id="grid">
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-1"><span class="mono">GFC</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 31 Jul 2025</div>
+          <h3><a href="#">Golden Fried Chicken Packaging</a></h3>
+          <p>GFC 2026 brand story, wrapped in fresh packaging — GFC wanted more than new graphics.</p>
+          <div class="tag-row"><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-4"><span class="mono">Macho</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Nov 2025</div>
+          <h3><a href="#">Macho Cleaning Products Branding &amp; Packaging</a></h3>
+          <p>A value-premium home-care brand — we created a bold packaging identity from the ground up.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="web">
+        <div class="p-thumb thumb-2"><span class="mono">T&amp;M</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Jun 2025</div>
+          <h3><a href="#">Tablets &amp; More Website</a></h3>
+          <p>End-to-end ecommerce for an electronics and home-appliance retailer covering phones and tablets.</p>
+          <div class="tag-row"><span class="tag">Graphic Design</span><span class="tag">Websites</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="web">
+        <div class="p-thumb thumb-3"><span class="mono">Rima</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Nov 2025</div>
+          <h3><a href="#">Rima Cruises Website</a></h3>
+          <p>A mobile-first site that turns curious visitors into paid seats on Malta's cruise routes.</p>
+          <div class="tag-row"><span class="tag">Graphic Design</span><span class="tag">Websites</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="marketing">
+        <div class="p-thumb thumb-2"><span class="mono">T&amp;M</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 12 Jul 2026</div>
+          <h3><a href="#">Tablets &amp; More Digital Marketing</a></h3>
+          <p>Meta Ads, Google Ads and ecommerce marketing in Malta driving bundle offers and repeat sales.</p>
+          <div class="tag-row"><span class="tag">Marketing</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-5"><span class="mono">Nonna's</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Oct 2025</div>
+          <h3><a href="#">Nonna's Flaky Goods Branding &amp; Packaging</a></h3>
+          <p>Concept branding and packaging for a homestyle chicken-pie brand made "Nonna's way".</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-6"><span class="mono">Boba</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Nov 2025</div>
+          <h3><a href="#">Boba Bear Branding &amp; Packaging</a></h3>
+          <p>Boba Bear is a playful bubble-tea brand blending kawaii energy with shelf-ready packaging.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="web">
+        <div class="p-thumb thumb-3"><span class="mono">F&amp;M</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 1 Dec 2024</div>
+          <h3><a href="#">Frosty &amp; Mills Website</a></h3>
+          <p>Frosty &amp; Mills is one of Malta's leading pie brands — designed a site to match.</p>
+          <div class="tag-row"><span class="tag">Graphic Design</span><span class="tag">Websites</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="marketing">
+        <div class="p-thumb thumb-1"><span class="mono">GFC</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 1 Mar 2025</div>
+          <h3><a href="#">Golden Fried Chicken Proper Combos</a></h3>
+          <p>Golden Fried Chicken came to us with one clear goal: make every combo irresistible.</p>
+          <div class="tag-row"><span class="tag">Marketing</span><span class="tag">Photo &amp; Video</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="web">
+        <div class="p-thumb thumb-4"><span class="mono">Mayu</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Sep 2025</div>
+          <h3><a href="#">Mayu Flavours Website</a></h3>
+          <p>An elegant, adults-only dining presence designed to drive table reservations.</p>
+          <div class="tag-row"><span class="tag">Graphic Design</span><span class="tag">Websites</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="marketing content" data-featured="true">
+        <div class="p-thumb thumb-3"><span class="mono">F&amp;M</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 24 Nov 2024</div>
+          <h3><a href="index.html#who-we-are">Frosty &amp; Mills Commercials ★</a></h3>
+          <p>Frosty &amp; Mills sought a creative and strategic marketing partner capable of producing a full TV, YouTube and social campaign.</p>
+          <div class="tag-row"><span class="tag">Marketing</span><span class="tag">Photo &amp; Video</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-6"><span class="mono">Bite Me</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 13 Jul 2026</div>
+          <h3><a href="#">Bite Me Cookies — Logo &amp; Packaging</a></h3>
+          <p>Empixa supported the client with a simple logo and packaging system built to stand out on shelf.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding">
+        <div class="p-thumb thumb-5"><span class="mono">HS</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 1 Nov 2025</div>
+          <h3><a href="#">Happy Shopper Branding</a></h3>
+          <p>Crafted to resonate with both family shoppers and everyday convenience-store visitors.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding design">
+        <div class="p-thumb thumb-2"><span class="mono">Punto</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 1 Jul 2025</div>
+          <h3><a href="#">Punto Pizza Concept Design</a></h3>
+          <p>A self-initiated branding concept for a modern pizza brand, from logo to box design.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span><span class="tag">Packaging</span></div>
+        </div>
+      </article>
+
+      <article class="p-card" data-cat="branding design">
+        <div class="p-thumb thumb-4"><span class="mono">Vorta</span></div>
+        <div class="p-body">
+          <div class="p-date">📅 2 Nov 2025</div>
+          <h3><a href="#">Vorta Finance Branding</a></h3>
+          <p>A confident, trust-first identity built for a modern finance brand entering a crowded market.</p>
+          <div class="tag-row"><span class="tag">Branding</span><span class="tag">Graphic Design</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Let's Make Your Business Great Together</h2>
+    <p>We know we can push boundaries.</p>
+    <a href="index.html#consultation" class="btn btn-light">Get in touch today</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>
+      <a href="index.html" class="logo">empixa</a>
+      <p>Brand Development Services. Call us all week from 9am to 8pm — message us 24/7.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H8v4h2v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v2c1-1.5 2.5-2.3 4.5-2.3 3 0 5.5 2 5.5 5.8V20h-4v-5.5c0-1.6-.6-2.5-2-2.5s-2.3 1-2.3 2.6V20h-4z"/></svg></a>
+        <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M4 4l16 16M20 4L4 20" stroke="#fff" stroke-width="2"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="index.html#consultation">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#who-we-are">Who We Are</a></li>
+        <li><a href="index.html#consultation">Contact Us</a></li>
+        <li><a href="#">Terms and Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li>+356 77077636</li>
+        <li>contact@empixa.com</li>
+        <li>5 Blk 16B, Bull Street, Cospicua, Malta</li>
+      </ul>
+    </div>
+  </div>
+  <p class="copyright">© 2026 All Rights Reserved for Empixa — Digital Access</p>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.p-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cat || '';
+        const show = filter === 'all' || cats.split(' ').includes(filter);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
